@@ -1,8 +1,8 @@
 import express from 'express' 
 import mongoose from 'mongoose'
-import cars from 'cars'
-import paht from 'path'
-import routes from './router'
+import cors from 'cors'
+import path from 'path'
+import router from './router'
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -10,7 +10,7 @@ dotenv.config()
         constructor() {
             this.server = express()
             mongoose.connect(process.env.DATABASE, {})
-            tris.middlewares()
+            this.middlewares()
             this.routes()
         }
 
@@ -24,7 +24,7 @@ dotenv.config()
         }
 
         routes() {
-            this.server.use(routes)
+            this.server.use(router)
         }
     }
 

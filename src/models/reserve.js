@@ -1,5 +1,7 @@
 import {Schema, model } from 'mongoose'
-const Reserveschema = new Schema ({
+import house from './House'
+
+const ReserveSchema = new Schema ({
     date: String,
     user: { 
         type: Schema.Types.ObjectId,

@@ -16,11 +16,11 @@ class SessionController {
         if(!(await schema.isValid(req.body))) {
             return res.status(400).json({ error: 'Falha na validação'})
         }
-        let user = await User.findOne({ email })
+        let users = await User.findOne({ email })
         if(!user) {
-            user= await User.create({ email })
+            users= await User.create({ email })
         }
-        return res.json(user)
+        return res.json(users)
     }
 }
 

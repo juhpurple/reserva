@@ -17,7 +17,7 @@ class SessionController {
             return res.status(400).json({ error: 'Falha na validação'})
         }
         let users = await User.findOne({ email })
-        if(!user) {
+        if(!users) {
             users= await User.create({ email })
         }
         return res.json(users)

@@ -1,5 +1,5 @@
-import {Schema, model } from 'mongoose'
-import house from './House'
+import { Schema, model } from 'mongoose'
+// import house from './House'
 
 const ReserveSchema = new Schema ({
     date: String,
@@ -8,8 +8,8 @@ const ReserveSchema = new Schema ({
         ref:'User'
   },
   house: {
-    type: Schema.Types.Objectid,
-    red: 'House'
+    type: Schema.Types.ObjectId,
+    ref: 'House'
   }
 })
 
